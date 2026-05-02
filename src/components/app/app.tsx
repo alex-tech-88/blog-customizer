@@ -2,7 +2,7 @@ import { useState, CSSProperties } from 'react';
 import clsx from 'clsx';
 
 import { Article } from '../article/Article';
-import { ArticleParamsForm } from 'components/article-params-form';
+import { ArticleParamsForm } from 'src/components/article-params-form';
 import {
 	defaultArticleState,
 	ArticleStateType,
