@@ -8,13 +8,14 @@ const production = process.env.NODE_ENV === 'production';
 
 module.exports = {
 	entry: path.resolve(__dirname, '..', './src/index.tsx'), //точка входа в наше приложение содержит абсолютный путь к index.ts
-	output: {
-		path: path.resolve(__dirname, '..', './dist'), //путь куда будет собираться наш проект
-		filename: production
-			? 'static/scripts/[name].[contenthash].js'
-			: 'static/scripts/[name].js', // имя нашего бандла
-		publicPath: '/',
-	},
+output: {
+    path: path.resolve(__dirname, '..', './dist'), 
+    filename: production
+      ? 'static/scripts/[name].[contenthash].js'
+      : 'static/scripts/[name].js', 
+    // Если продакшен — прописываем имя репозитория, иначе корень
+    publicPath: production ? '/blog-customizer/' : '/',
+  },
 	//Нужно помочь вебпаку научится работать с jsx и tsx файлами для этого используют ts loader
 	module: {
 		rules: [
